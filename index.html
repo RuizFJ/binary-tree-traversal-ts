@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Árbol Binario – Recorridos paso a paso</title>
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>Árbol Binario • Recorridos paso a paso</h1>
+    <p>Elige el recorrido, el número de niveles (máx. 5) y avanza paso a paso.</p>
+  </header>
+
+  <section class="controls">
+    <label>
+      Tipo de recorrido:
+      <select id="traversalType">
+        <option value="pre">Pre-orden (Raíz, Izq, Der)</option>
+        <option value="in">In-orden (Izq, Raíz, Der)</option>
+        <option value="post">Pos-orden (Izq, Der, Raíz)</option>
+      </select>
+    </label>
+
+    <label>
+      Niveles (1–5):
+      <input type="number" id="levels" min="1" max="5" value="3"/>
+    </label>
+
+    <button id="buildBtn">Construir árbol</button>
+    <button id="playBtn">▶ Reproducir</button>
+    <button id="pauseBtn">⏸ Pausa</button>
+    <button id="prevBtn">⟵ Anterior</button>
+    <button id="nextBtn">Siguiente ⟶</button>
+    <button id="resetBtn">↺ Reiniciar</button>
+  </section>
+
+  <main>
+    <div class="canvas-wrap">
+      <!-- SVG para dibujar el árbol -->
+      <svg id="treeSvg" width="100%" height="480" viewBox="0 0 1000 480" preserveAspectRatio="xMidYMid meet"></svg>
+    </div>
+    <aside>
+      <h2>Recorrido</h2>
+      <ol id="orderList"></ol>
+      <h3>Paso actual</h3>
+      <div id="currentStep">—</div>
+    </aside>
+  </main>
+
+  <!-- Cargamos JS compilado. El código fuente TypeScript está en main.ts -->
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
